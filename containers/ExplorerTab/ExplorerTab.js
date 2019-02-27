@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import {Image, StyleSheet} from 'react-native';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Left, Body, Right, Title, Item, Input, Text, Card, CardItem, Thumbnail, StyleProvider} from 'native-base';
+import { Container, Header, Content, Footer, FooterTab, Button, Icon, Item, Input, Text, StyleProvider} from 'native-base';
 import { Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { ScaledSheet } from 'react-native-size-matters';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import getTheme from '../../native-base-theme/components'
 import material from '../../native-base-theme/variables/material'
-import kindaInstagram from '../../native-base-theme/variables/kinda-instagram'
 
 const bucks = require('../../assets/images/bucks.jpg');
 const lebron = require('../../assets/images/lebron.jpg');
@@ -53,41 +52,17 @@ export default class ExplorerTab extends Component {
           </Button>
         </Header>
         <Content>
-            <Grid>
-                <Row>
-                    <Col>
-                        <Image source={bucks} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                    <Col>
-                        <Image source={lebron} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                    <Col>
-                        <Image source={harden} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Image source={bucks} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                    <Col>
-                        <Image source={lebron} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                    <Col>
-                        <Image source={harden} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Image source={bucks} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                    <Col>
-                        <Image source={lebron} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                    <Col>
-                        <Image source={harden} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
-                    </Col>
-                </Row>
-            </Grid>
+          <Container style={styles.content}>
+            <Image source={bucks} style={styles2.img}/>
+            <Image source={lebron} style={styles2.img}/>
+            <Image source={harden} style={styles2.img}/>
+            <Image source={bucks} style={styles2.img}/>
+            <Image source={lebron} style={styles2.img}/>
+            <Image source={harden} style={styles2.img}/>
+            <Image source={bucks} style={styles2.img}/>
+            <Image source={lebron} style={styles2.img}/>
+            <Image source={harden} style={styles2.img}/>
+          </Container>
         </Content>
         <Footer>
           <FooterTab>
@@ -123,4 +98,17 @@ const styles = StyleSheet.create({
     paddingTop: getStatusBarHeight(),
     height: 54 + getStatusBarHeight(),
   },
+  content: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+});
+
+const styles2 = ScaledSheet.create({
+  img: {
+    height: '180@s', 
+    width: '110@vs', 
+    margin: '3@ms', 
+    borderRadius: 5,
+  }
 });
