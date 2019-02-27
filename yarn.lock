@@ -4705,6 +4705,11 @@ react-native-size-matters@^0.1.6:
   resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.1.6.tgz#2d49390ab861e7a9335d8d92b80d7f75349ff8a0"
   integrity sha512-XE6foUS1GGC5XLFAL643vpupoR/lHKRePoV4Meh27fhAKxWxPJdJdgdFcMBK50idWrAxv8ZfBtPhtTSv+IKAcg==
 
+react-native-status-bar-height@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.2.0.tgz#3bd51de134660efc5f5ad136ca573c7d5790f7ed"
+  integrity sha512-4WJpyZirzeMHyZiyNEy4LnSPOtuLRVy3+28Rhz7ffrjCVcc5RFcC0HVjFnkwfuhcTyXIDtzPG6canJkXzbTtBA==
+
 react-native-svg@8.0.10:
   version "8.0.10"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-8.0.10.tgz#b07e2342d1486220f5fda1a584e316e7d2d1f392"

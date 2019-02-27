@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import {Image} from 'react-native';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Left, Body, Right, Title, Item, Input, Text, Card, CardItem, Thumbnail} from 'native-base';
+import {Image, StyleSheet} from 'react-native';
+import { Container, Header, Content, Footer, FooterTab, Button, Icon, Left, Body, Right, Title, Item, Input, Text, Card, CardItem, Thumbnail, StyleProvider} from 'native-base';
 import { Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import { Col, Row, Grid } from "react-native-easy-grid";
+import { getStatusBarHeight } from 'react-native-status-bar-height';
+import getTheme from '../../native-base-theme/components'
+import material from '../../native-base-theme/variables/material'
+import kindaInstagram from '../../native-base-theme/variables/kinda-instagram'
 
 const bucks = require('../../assets/images/bucks.jpg');
 const lebron = require('../../assets/images/lebron.jpg');
@@ -36,8 +40,9 @@ export default class ExplorerTab extends Component {
     }
 
     return (
-      <Container>
-        <Header searchBar rounded>
+      <StyleProvider style = {getTheme(material)}>
+      <Container style = {styles.container}>
+        <Header searchBar rounded style = {styles.header}>
           <Item>
             <Icon name="search" />
             <Input placeholder="Search" />
@@ -51,35 +56,35 @@ export default class ExplorerTab extends Component {
             <Grid>
                 <Row>
                     <Col>
-                        <Image source={bucks} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
+                        <Image source={bucks} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
                     </Col>
                     <Col>
-                        <Image source={lebron} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
+                        <Image source={lebron} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
                     </Col>
                     <Col>
-                        <Image source={harden} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Image source={bucks} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
-                    </Col>
-                    <Col>
-                        <Image source={lebron} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
-                    </Col>
-                    <Col>
-                        <Image source={harden} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
+                        <Image source={harden} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <Image source={bucks} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
+                        <Image source={bucks} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
                     </Col>
                     <Col>
-                        <Image source={lebron} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
+                        <Image source={lebron} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
                     </Col>
                     <Col>
-                        <Image source={harden} style={{height: scale(180), width: verticalScale(110), margin: moderateScale(5), borderRadius: 5}}/>
+                        <Image source={harden} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Image source={bucks} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
+                    </Col>
+                    <Col>
+                        <Image source={lebron} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
+                    </Col>
+                    <Col>
+                        <Image source={harden} style={{height: scale(180), width: verticalScale(115), margin: moderateScale(3), borderRadius: 5}}/>
                     </Col>
                 </Row>
             </Grid>
@@ -92,10 +97,10 @@ export default class ExplorerTab extends Component {
             <Button active>
               <Icon name="search" />
             </Button>
-            <Button active>
+            <Button>
               <Icon name="add"/>
             </Button>
-            <Button active>
+            <Button>
               <Icon name="heart"/>
             </Button>
             <Button>
@@ -104,6 +109,18 @@ export default class ExplorerTab extends Component {
           </FooterTab>
         </Footer>
       </Container>
+      </StyleProvider>
     );
   }
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  header: {
+    paddingTop: getStatusBarHeight(),
+    height: 54 + getStatusBarHeight(),
+  },
+});
